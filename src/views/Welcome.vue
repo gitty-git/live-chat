@@ -1,19 +1,17 @@
 <template>
     <div class="welcome container">
         <p>Welcome</p>
-        <div v-if="showLogin" @login="enterChat">
+        <div v-if="showLogin">
             <h2>Log in</h2>
-            <LoginForm/>
+            <LoginForm @login="enterChat"/>
             <p>No account yet? <span @click="showLogin = !showLogin">Sign up</span> instead</p>
         </div>
 
-        <div v-else @signup="enterChat">
+        <div v-else>
             <h2>Sign up</h2>
-            <SignUpForm/>
+            <SignUpForm @signup="enterChat"/>
             <p>Already registered? <span @click="showLogin = !showLogin">Log in</span> instead</p>
         </div>
-
-
     </div>
 </template>
 
